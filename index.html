@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>пр 7</title>
+</head>
+<body>  
+  <h2>Користувач vs Комп'ютер</h2>
+
+  <p> <span id="result"></span></p>
+  <div class="container">
+    <div class="player">
+      <img src="user.png" alt="Опис зображення">
+      <p>Ім'я: <span id="user-name"></span> </p>
+      <p>Число: <span id="user-number" class="number">?</span></p>
+      <p>Перемоги: <span id="user-score" class="score">0</span></p>
+        </div>
+        <div class="player">
+      <img src="комп.тер.png" alt="Опис зображення">
+      <p>Ім'я: Комп'ютер</p>
+      <p>Число: <span id="computer-number" class="number">?</span></p>
+      <p>Перемоги: <span id="computer-score" class="score">0</span></p>
+    </div>
+  </div>
+  <button id="play-button" onclick="playGame()">Грати</button>
+</body>
+<script src="../javaScript.js"></script>
+</html>

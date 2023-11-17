@@ -1,0 +1,82 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  padding: 50px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+  flex-direction: column;
+  text-align: center;
+  }
+  
+  img {
+    width: 150px;  
+    height: auto; 
+  }
+
+  button {
+    background-color: #84bfff;
+    border: none;
+    border-radius: 10px; /* Закруглені краї */
+    padding: 10px 40px; /* Більший розмір */
+    transition: background-color 1s;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    transform: scale(1, 1);
+    background-color: rgb(255, 187, 238);
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+  
+  h2 {
+    background: linear-gradient(90deg, #000000, #4e6e96, #8f568b, #000000);
+    animation: gradient 10s linear infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 10s linear infinite;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+  }
+ 
+  .player {
+    background: linear-gradient(90deg, #edf6ff, #edf6ff);
+    border: 2px solid #a3b4c9;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 30%;
+  }
+  
+  .result {
+  background: linear-gradient(90deg, #000000, #4e6e96, #8f568b, #000000);
+  background-size: 500% 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 10s linear infinite;
+  align-items: center;
+  }
+
+
