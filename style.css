@@ -18,6 +18,26 @@ body {
     height: auto; 
   }
 
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+
+
+
+  
   button {
     background-color: #84bfff;
     border: none;
@@ -54,13 +74,6 @@ body {
     align-items: center;
   }
   
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
-  }
- 
   .player {
     background: linear-gradient(90deg, #edf6ff, #edf6ff);
     border: 2px solid #a3b4c9;
