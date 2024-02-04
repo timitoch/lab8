@@ -2,12 +2,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh; /* змінено height на min-height */
   margin: 0;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
-  padding-top: 50px;
-  padding-bottom: 50px; 
+  padding-top: 50px; /* Виберіть бажаний відступ від верха сторінки */
+  padding-bottom: 50px; /* Виберіть бажаний відступ від низу сторінки */
 }
 
 #numAlts, #numCriteria {
@@ -16,7 +16,7 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
   width: 80px;
-  text-align: center; 
+  text-align: center; /* Center form content */
 }
 
 
@@ -30,8 +30,8 @@ body {
 }
 
 #formCriteria {
-  margin-top: 50px; 
-  margin-bottom: 50px; 
+  margin-top: 50px; /* Виберіть бажаний відступ від верха сторінки */
+  margin-bottom: 50px; /* Виберіть бажаний відступ від низу сторінки */
   max-width: 1100px;
   min-width: 300px;
   padding: 20px;
@@ -41,8 +41,9 @@ body {
 }
 
 #formAlt{
-  margin-top: 50px; 
-  margin-bottom: 50px; 
+  margin-top: 50px; /* Виберіть бажаний відступ від верха сторінки */
+  margin-bottom: 50px; /* Виберіть бажаний відступ від низу сторінки */
+  max-width: 1100px;
   min-width: 300px;
   padding: 20px;
   background-color: #fff;
@@ -79,7 +80,9 @@ body {
   overflow: auto;
   display: inline-block;
   width: 100%;
-  text-align: center; 
+  text-align: center; /* backgroun-color: #fbfbfb;
+  width: 200px; */
+}
 
 
 
