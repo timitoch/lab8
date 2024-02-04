@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>пр 7</title>
+    <title>Аналіз ієрархій</title>
 </head>
-<body>  
-  <div id="form">
+<body>
+<div id="formCriteria">
     <div id="initialInputs">
-        <label for="numAlternatives">Кількість альтернатив:</label>
-        <input type="number" id="numAlternatives" min="2" value="5">
+        <label for="numAlts">Кількість альтернатив:</label>
+        <input type="number" id="numAlts" min="2" value="5">
         <br>
         <label for="numCriteria">Кількість критеріїв:</label>
         <input type="number" id="numCriteria" min="1" value="6">
@@ -19,8 +19,6 @@
 
     <div id="criteriaInputContainer"></div>
 
-    
-
     <div id="matrixInputContainer"style="display: none;"></div>
 
     <div id="resultsContainer" style="display: none;">
@@ -29,17 +27,37 @@
         <div id="priorityVector"></div>
     </div>
     
-    
     <div id="button">
         <button id="createMatrix" style="display: none;">Створити МПП</button>
+        <button id="calculate" style="display: none;">Розрахувати</button>
         <button id="autoFillCriteria" style="display: none;">Автозаповнити</button>
         <button id="autoFillMatrix" style="display: none;">Автозаповнити</button>
-        <button id="calculate" style="display: none;">Розрахувати</button>
-
     </div>
 
-    
+
+
+
+    <div id="initialInputsAlt">
+        <button id="nextA" style="display: none;">Далі a</button>
+    </div>
+
+    <div id="AltInputContainer"></div>
+
+    <div id="matrixInputContainerAlt"style="display: none;"></div>
+
+    <div id="InputContainerAlt"></div>
+
+    <div id="calculateEndContainer" style="display: none;"></div>
+
+    <div id="button">
+        <button id="createMatrixAlt" style="display: none;">Створити МПП a</button>
+        <button id="calculateAlt" style="display: none;">Розрахувати a</button>
+        <button id="autoFillAlt" style="display: none;">Автозаповнити a</button>
+        <button id="autoFillMatrixAlternative" style="display: none;">Автозаповнити a</button>
+        <button id="calculateEnd" style="display: none;">Розрахувати кращу альтернативу</button>
+    </div>
 </div>
+
+    <script src="./javaScript.js"></script>
 </body>
-<script src="./javaScript.js"></script>
 </html>
