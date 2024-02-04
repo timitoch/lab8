@@ -2,41 +2,65 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; 
   margin: 0;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
-
+  padding-top: 50px;
+  padding-bottom: 50px; 
 }
 
-#numAlternatives, #numCriteria {
+#numAlts, #numCriteria {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
   width: 80px;
-  text-align: center; /* Center form content */
+  text-align: center; 
 }
 
-.criteria-input {
-  
+
+
+.criteria-input, .Alt-input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
   width: 90%;
-  
 }
-#form {
-  margin: 0;
+
+#formCriteria {
+  margin-top: 50px; 
+  margin-bottom: 50px; 
   max-width: 1100px;
   min-width: 300px;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px #d7d5d5;
+}
 
-  
+#formAlt{
+  margin-top: 50px; 
+  margin-bottom: 50px; 
+  min-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #d7d5d5;
+}
+
+#alternativeInput1, 
+#alternativeInput2,
+#alternativeInput3,
+#alternativeInput4,
+#alternativeInput5,
+#alternativeInput6,
+#alternativeInput7,
+#alternativeInput8,
+#alternativeInput9 {
+
+
 }
 #criteriaInput1, 
 #criteriaInput2,
@@ -55,14 +79,35 @@ body {
   overflow: auto;
   display: inline-block;
   width: 100%;
-  text-align: center; /* background-color: #fbfbfb;
-  width: 200px; */
-}
+  text-align: center; 
 
-#criteriaInputContainer {
+
+
+#criteriaInputContainer, #AltInputContainer {
   background-color: #fbfbfb;
   width: 300px;
 }
+
+#autoFillCriteria, 
+#autoFillMatrix,
+#autoFillAlt,
+#autoFillMatrixAlternative {
+  background-color: #e4e4e4;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+#autoFillCriteria:hover,
+#autoFillMatrix:hover,
+#autoFillAlternative:hover,
+#autoFillMatrixAlternative:hover {
+  background-color: #cecece;
+}
+
 
 
 button {
@@ -90,15 +135,17 @@ table, th, td {
   border-radius: 10px;
 }
 
+#matrixInputContainerAlternative {
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
 th, td {
   text-align: center;
   padding: 10px;
 }
 
-th {
-  background-color: #4CAF50;
-  color: rgb(255, 255, 255);
-}
 
 
 
