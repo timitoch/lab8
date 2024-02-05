@@ -40,15 +40,12 @@ document.getElementById("calculate").addEventListener("click", function (event) 
   let lambda = calculateLambda(priorityVector, matrixValues);
   calculate(criteriaNames, matrixValues, eigenVector, priorityVector, lambda);
 
-
- 
   let n = parseInt(document.getElementById("numCriteria").value);
   let IU = calculateIU(lambda, n);
   let randomIndices = [0, 0, 0.58, 0.9, 1.12, 1.24, 1.32, 1.41, 1.45, 1.49]; 
   let VU = calculateVU(IU, randomIndices, n - 1);
   let VUPercentage = calculateVUPercentage(VU);
 
-  
   if (VUPercentage < 0 || VUPercentage > 10) {
       alert("Відсоток BУ виходить за межі від 0 до 10!");
       event.preventDefault(); 
@@ -66,10 +63,6 @@ document.getElementById("calculate").addEventListener("click", function (event) 
   resultsDiv.innerHTML += `<p>ВУ: ${VU.toFixed(8).replace(/\.?0+$/, "")}</p>`;
   resultsDiv.innerHTML += `<p>ВУ у відсотках: ${VUPercentage}%</p>`;
 });
-
-
-
-
 
   document.getElementById("nextA").addEventListener("click", function () {
     showAltInputs();
@@ -114,21 +107,14 @@ document.getElementById("calculate").addEventListener("click", function (event) 
   calculateEndContainer.style.display = "block";
     document.getElementById("calculateEnd").style.display = "none";
     calculateEnd();
-
-    
   });
-
-
-
   };
 
   function showAltInputs() {
     let numAlts = parseInt(document.getElementById("numAlts").value);
     let AltInputContainer = document.getElementById("AltInputContainer");
-
     AltInputContainer.innerHTML = "";
 
-   
     let AltNames = getAltNames();
 
     for (let i = 0; i < numAlts; i++) {
@@ -139,7 +125,6 @@ document.getElementById("calculate").addEventListener("click", function (event) 
         input.id = 'AltInput' + (i + 1); 
         AltInputContainer.appendChild(input);
     }
-
     document.getElementById("nextBtn").style.display = "none";
     document.getElementById("createMatrixAlt").style.display = "block";
 }
@@ -154,7 +139,6 @@ document.getElementById("calculate").addEventListener("click", function (event) 
   }
 
  let matrices = {}; 
-
 function createMatrixAlt() {
   let numAlts = parseInt(document.getElementById("numAlts").value);
   let numCriteria = parseInt(document.getElementById("numCriteria").value);
@@ -173,13 +157,11 @@ function createMatrixAlt() {
     matrixContainer.id = 'matrix' + (i + 1); 
     matrixInputContainerAlt.appendChild(matrixContainer);
 
-   
     let matrix = document.createElement('table');
     matrixContainer.appendChild(matrix);
 
     matrices['matrix' + (i + 1)] = matrix; 
 
- 
     let headerRow = document.createElement('tr');
     matrix.appendChild(headerRow);
     headerRow.appendChild(document.createElement('th')); 
@@ -243,7 +225,6 @@ let IUs = {};
 let VUs = {}; 
 let randomIndices = [0, 0, 0.58, 0.9, 1.12, 1.24, 1.32, 1.41, 1.45, 1.49]; 
 
-
 function calculateAlt() {
   let numCriteria = parseInt(document.getElementById("numCriteria").value);
   let numAlts = parseInt(document.getElementById("numAlts").value); 
@@ -276,7 +257,6 @@ for (let j = 0; j < numAlts; j++) {
   sumRow.appendChild(cell);
   cell.textContent = sums[j].toFixed(8).replace(/\.?0+$/, ""); 
 }
-
 
     let matrixValues = Array.from(matrix.rows).slice(1, numAlts + 1).map(row => Array.from(row.cells).slice(1, numAlts + 1).map(cell => parseFloat(cell.textContent)));
     let eigenVector = calculateAltEigenVector(matrixValues);
@@ -396,7 +376,7 @@ function calculateEnd() {
     return;
   }
 
-  let numAlts = priorityVectors['matrix1'].length; // Кількість альтернатив
+  let numAlts = priorityVectors['matrix1'].length; 
   let bestAltName = altNames[0];
   let bestAltValue = 0;
   let allValuesEqual = true;
@@ -404,13 +384,13 @@ function calculateEnd() {
   for (let i = 0; i < numAlts; i++) {
     let sum = 0;
     for (let matrix in priorityVectors) {
-      let matrixValue = priorityVectors[matrix][i]; // Вектор пріорітету для альтернативи i
-      let criteriaValue = priorityVectorsForCriterias['criteria' + (parseInt(matrix.replace('matrix', '')))]; // Вектор пріорітету для критерія
+      let matrixValue = priorityVectors[matrix][i]; 
+      let criteriaValue = priorityVectorsForCriterias['criteria' + (parseInt(matrix.replace('matrix', '')))]; 
       sum += matrixValue * criteriaValue;
     }
     let p = document.createElement('p');
     p.textContent = altNames[i] + " = " + sum.toFixed(8).replace(/\.?0+$/, "");
-    outputContainer.appendChild(p); // Додайте текст до контейнера для виводу
+    outputContainer.appendChild(p); 
 
     if (sum > bestAltValue) {
       bestAltValue = sum;
@@ -530,7 +510,7 @@ for (let i = 0; i < criteriaNames.length; i++) {
       input.step = '1';
       input.dataset.row = i;
       input.dataset.col = j;
-      input.className = 'matrix-input'; // Додати клас до поля вводу
+      input.className = 'matrix-input'; 
       input.addEventListener('input', function () {
         let inverseCell = matrixTable.rows[j + 1].cells[i + 1];
         if (this.value != 0) {
@@ -543,13 +523,7 @@ for (let i = 0; i < criteriaNames.length; i++) {
     }
   }
 }
-
-
-
-
 matrixInputContainer.appendChild(calculateBtn);
-
-
 }
 
 function autoFillMatrix() {
@@ -594,63 +568,49 @@ function getMatrixValues() {
 let priorityVectorsForCriterias = {};
 function calculate(criteriaNames, matrixValues, eigenVector, priorityVector, lambda) {
   let resultsTable = document.getElementById("results");
-  resultsTable.innerHTML = ""; // Очистити попередні дані
+  resultsTable.innerHTML = ""; 
 
-  // Додати заголовок
+  
   let headerRow = resultsTable.insertRow();
-  headerRow.insertCell(); // Порожня клітинка у лівому верхньому куті
+  headerRow.insertCell(); 
 
-  // Додати назви критеріїв до рядка заголовка
   for (let i = 0; i < criteriaNames.length; i++) {
     let headerCell = headerRow.insertCell();
     headerCell.innerText = criteriaNames[i];
   }
 
-  // Додати заголовки для власного вектора та вектора пріорітетів
   headerRow.insertCell().innerText = "Власний вектор";
   headerRow.insertCell().innerText = "Вектор пріорітетів";
   headerRow.insertCell().innerText = "λ max";
 
-  // Додати рядки та стовпці для введення значень МПП
   for (let i = 0; i < criteriaNames.length; i++) {
     let row = resultsTable.insertRow();
 
-    // Додати назву критерію у лівий стовпець
     let firstCell = row.insertCell();
     firstCell.innerText = criteriaNames[i];
 
-    // Додати значення МПП до відповідних клітинок
     for (let j = 0; j < criteriaNames.length; j++) {
       let cell = row.insertCell();
-      //cell.innerText = matrixValues[i][j];
       cell.innerText = parseFloat(matrixValues[i][j]).toFixed(8).replace(/\.?0+$/, "");
     }
 
-    // Запис вектора пріорітетів по зміних
   for (let i = 0; i < priorityVector.length; i++) {
     priorityVectorsForCriterias['criteria' + (i + 1)] = priorityVector[i];
   }
-    // Додати значення власного вектора та вектора пріорітетів
     let eigenCell = row.insertCell();
     eigenCell.innerText = parseFloat(eigenVector[i]).toFixed(8).replace(/\.?0+$/, "");
-    //eigenCell.innerText = limitText(eigenVector[i].toString());
     let priorityCell = row.insertCell();
     priorityCell.innerText = parseFloat(priorityVector[i]).toFixed(8).replace(/\.?0+$/, "");
-    //priorityCell.innerText = limitText(priorityVector[i].toString());
     let lambdaCell = row.insertCell(); 
     lambdaCell.innerText = parseFloat(lambda[i]).toFixed(8).replace(/\.?0+$/, "");
-    //lambdaCell.innerText = limitText(lambda[i].toString());
   }
 
-  // Об'єднати matrixValues, eigenVector та priorityVector в один масив
   let combinedValues = matrixValues.map((row, i) => [...row, eigenVector[i], priorityVector[i], lambda[i]]);
 
-  // Додати рядок для сум кожного стовпчика
   let sumRow = resultsTable.insertRow();
   let sumHeaderCell = sumRow.insertCell();
   sumHeaderCell.innerText = "Сума";
 
-  // Обчислити суми кожного стовпчика і додати їх до рядка
 for (let j = 0; j < criteriaNames.length + 3; j++) {
   let sum = 0;
   for (let i = 0; i < criteriaNames.length; i++) {
@@ -658,8 +618,6 @@ for (let j = 0; j < criteriaNames.length + 3; j++) {
   }
   let sumCell = sumRow.insertCell();
   sumCell.innerText = parseFloat(sum).toFixed(8).replace(/\.?0+$/, "");
-  //sumCell.innerText = sum;
-  //sumCell.innerText = limitText(sum.toString());
 }
 
 
@@ -690,7 +648,6 @@ function calculateLambda(priorityVector, matrix) {
   let lambda = [];
   let columnSums = [];
 
-  // Calculate the sum of each column
   for (let j = 0; j < matrix[0].length; j++) {
       let columnSum = 0;
       for (let i = 0; i < matrix.length; i++) {
