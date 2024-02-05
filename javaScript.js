@@ -289,7 +289,7 @@ for (let j = 0; j < numAlts; j++) {
     lambdaAlts['matrix' + (i + 1)] = lambdaAlt; 
   
     let thForLambda = document.createElement('th');
-    thForLambda.textContent = "Лямбда";
+    thForLambda.textContent = "λ max";
     matrix.rows[0].appendChild(thForLambda); 
     for (let j = 0; j < numAlts; j++) {
       let cell = matrix.rows[j + 1].insertCell(-1); 
